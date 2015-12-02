@@ -43,7 +43,9 @@ var history = historyResult.Data;
 ```
 #####Удалить запрос
 ```csharp
-
+var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
+var deleteResult = api.DeleteRequest(reqId);
+var delete = deleteResult.Data;
 ```
 
 ###Заявления в Росреестр (Доп. документы, постановка на кад.учет ЗУ и ОКС, Акты обследования и прочие)
