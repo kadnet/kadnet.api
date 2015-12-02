@@ -19,6 +19,10 @@ if (authResult.Result)
 ```csharp
 var requestsTypesResult = api.GetRequestsTypes();
 ```
+#####Получить список типов объектов
+```csharp
+var objectTypesResult = api.GetObjectsTypes();
+```
 #####Получить список запросов
 ```csharp
 var limitRequests = 100;
