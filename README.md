@@ -1,4 +1,4 @@
-# Kadnet Api Клиент.
+# Kadnet Api Клиент
 С его помощью вы можете использовать сервис https://www.kadnet.ru для запроса сведений из Росреестра (далее РР) и отправки заявлений о постановке на кадастровый учет, доп. документов и прочее
 
 #####Авторизация пользователя
@@ -25,6 +25,7 @@ var requestsResult = api.GetRequests(limitRequests, skipRequests);
 ```csharp
 var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
 var requestResult = api.GetRequest(reqId);
+var request = requestResult.Data;
 ```
 #####Получить контент запрос для подписания ЭЦП пользователя
 ```csharp
@@ -32,7 +33,9 @@ var requestResult = api.GetRequest(reqId);
 ```
 #####Получить историю запроса по идентификатору
 ```csharp
-
+var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
+var historyResult = api.GetRequestHistory(reqId);
+var history = historyResult.Data;
 ```
 #####Получить результат запроса
 ```csharp
