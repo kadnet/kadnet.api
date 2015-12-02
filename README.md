@@ -17,11 +17,14 @@ if (authResult.Result)
 Получить список запросов в РР
 -----------
 ```csharp
-
+var limitRequests = 100;
+var skipRequests = 0;
+var requestsResult = api.GetRequests(limitRequests, skipRequests);
 ```
 
 Получить запрос в РР по идентификатору
 -----------
 ```csharp
-
+var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
+var requestResult = api.GetRequest(reqId);
 ```
