@@ -14,6 +14,8 @@ var authResult = api.Auth(login, password, software);
 if (authResult.Result)
   token = authResult.Data;
 ```
+
+# Запросы в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
 Получить список запросов
 -----------
 ```csharp
@@ -28,3 +30,29 @@ var requestsResult = api.GetRequests(limitRequests, skipRequests);
 var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
 var requestResult = api.GetRequest(reqId);
 ```
+
+Получить контент запрос для подписания ЭЦП пользователя
+-----------
+```csharp
+
+```
+
+Получить историю запроса по идентификатору
+-----------
+```csharp
+
+```
+
+Получить результат запроса
+-----------
+```csharp
+
+```
+
+Удалить запрос
+-----------
+```csharp
+
+```
+
+# Заявления в Росреестр (Доп. документы, постановка на кад.учет ЗУ и ОКС, Акты обследования и прочие)
