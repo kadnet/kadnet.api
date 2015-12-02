@@ -15,6 +15,10 @@ if (authResult.Result)
 ```
 
 ###Запросы в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
+#####Получить список типов запросов
+```csharp
+var requestsTypesResult = api.GetRequestsTypes();
+```
 #####Получить список запросов
 ```csharp
 var limitRequests = 100;
