@@ -12,6 +12,6 @@ var login = "kadnet-test-user@gmail.com";
 var password = "########";
 
 var authResult = api.Auth(login, password, software);
-  if (authResult.Result)
-    token = authResult.Data;
+if (authResult.Result)
+  token = authResult.Data;
 ```
