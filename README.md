@@ -111,25 +111,38 @@ var objectTypesResult = api.GetObjectsTypes();
    "Date":"2015-12-04T15:09:34.9482977+03:00"
 }
 ```
-#####Получить список типов тарифных планов
+####Получить список типов тарифных планов
 ```csharp
 var requestsTariffsResult = api.GetRequestsTariffs();
 var requestsTariffs = requestsTariffsResult.Data;
 ```
 *Результат выполнения запроса*
 ```javascript
-{
-  "Result":true,
-  "Data":[
-    {
-      "TariffCode":"KptItSelf2015",
-      "UserDescription":"10Р + Самостоятельная оплата по коду платежа"
-    },
-    {
-      "TariffCode":"KptAllInclusive",
-      "UserDescription":"190 рублей - Автоматическая оплата"
-    }
-  ]
+{  
+   "Result":true,
+   "Data":[  
+      {  
+         "TariffCode":"KptAllInclusive",
+         "UserDescription":"190 рублей - Автоматическая оплата"
+      },
+      {  
+         "TariffCode":"KptItSelf2015",
+         "UserDescription":"10Р + Самостоятельная оплата по коду платежа"
+      },
+      {  
+         "TariffCode":"EgrpItSelfSummer2015",
+         "UserDescription":"Самостоятельная оплата по коду платежа в Qiwi"
+      },
+      {  
+         "TariffCode":"EgrpAllInclusive",
+         "UserDescription":null
+      },
+      {  
+         "TariffCode":"EgrpLite",
+         "UserDescription":null
+      }
+   ],
+   "Date":"2015-12-04T15:09:36.0421248+03:00"
 }
 ```
 
