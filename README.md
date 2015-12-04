@@ -15,9 +15,10 @@ if (authResult.Result)
 ```
 *Результат выполнения запроса*
 ```javascript
-{ "Data" : "dipjIB2lcWNwCgHGdjTAu9+VAGJHP2zhYuAMOFgeB8HHH5IFmYzXkUayhdjdZCXNXkBMUSGCqjFavWy+tHqh1HnXyCgALT03HgI/eoLtbn7XHNRjtMnHDcvo2hp/y6XZcsS+y11D4STA3qU3KAq1uUxD/dMmS2Be1o+yF/WEh9rhRLuuR3lMIzjjQ5YeQ8C2FHQi/8mwhMMZtIzp/PlydYRXBA/B+oia",
-  "Date" : "2015-12-04T14:57:42.1676008+03:00",
-  "Result" : true
+{  
+   "Data":"dipjIB2lcWNwCgHGdjTAu9+VAGJHP2zhhdjdZCXNXkBMLT03HgI/eoLtbn76XZcsS+y11D4STA3qU3KAq1uUxD/dMmS2jjQ5YeQ8C2FHQi/8mwhMMZtIzp/PlydYRXBA/B+oia",
+   "Date":"2015-12-04T14:57:42.1676008+03:00",
+   "Result":true
 }
 ```
 ###Запросы в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
