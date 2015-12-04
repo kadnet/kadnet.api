@@ -25,6 +25,49 @@ if (authResult.Result)
 ```csharp
 var requestsTypesResult = api.GetRequestsTypes();
 ```
+*Результат выполнения запроса*
+```javascript
+{
+  "Result":true,
+  "Data":[
+    {
+      "Id":"7f5891fe-9134-48ab-92a2-0b4c9ac5af08",
+      "ShortTitle":"Выписка о переходе прав",
+      "FullTitle":"Выписка о переходе прав объекта недвижимости"
+    },
+    {
+      "Id":"3fbfe5ff-0602-45e4-8434-aad052d7d234",
+      "ShortTitle":"Выписка ЕГРП",
+      "FullTitle":"Выписка о правах на объект недвижимости"
+    },
+    {
+      "Id":"66b36e90-30f6-4c74-8d20-eff440cc41ae",
+      "ShortTitle":"КВЗУ",
+      "FullTitle":"Кадастровая выписка земельного участка"
+    },
+    {
+      "Id":"a5b10384-95fe-4dba-887e-6ae5ff156f3f",
+      "ShortTitle":"КП",
+      "FullTitle":"Кадастровый паспорт"
+    },
+    {
+      "Id":"6aa0e204-4d11-4e97-8348-1c2d9bce3655",
+      "ShortTitle":"КПТ",
+      "FullTitle":"Кадастровый план территории"
+    },
+    {
+      "Id":"31efe079-ea67-4fb8-9c9d-c38e194dba5c",
+      "ShortTitle":"КСЗУ",
+      "FullTitle":"Справка о кадастровой стоимости земельного участка"
+    },
+    {
+      "Id":"1b240b8e-a626-4305-9961-42e700a95e05",
+      "ShortTitle":"Справка о лицах, получавших сведения",
+      "FullTitle":"Справка о лицах, получивших сведения по объекту недвижимости"
+    }
+  ]
+}
+```
 #####Получить список типов объектов
 ```csharp
 var objectTypesResult = api.GetObjectsTypes();
