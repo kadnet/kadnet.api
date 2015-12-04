@@ -146,10 +146,9 @@ var requestsTariffs = requestsTariffsResult.Data;
 }
 ```
 
-
-#####Проверить кадастровый номер
+####Проверить кадастровый номер
 ```csharp
-var kadNubmers = "66:41:10204:003-005;";
+var kadNubmers = "66:41:10204:003-005";
 var comment = "Обухово, клиент Иванов";
 var requestsTypeId = Guid.Parse("6aa0e204-4d11-4e97-8348-1c2d9bce3655");//КПТ
 var objectTypeId = Guid.Empty;
@@ -158,6 +157,40 @@ var checkRequests = checkRequestsResult.Data;
 
 JArray json = JArray.Parse(checkRequests);
 ```
+*Результат выполнения запроса*
+```javascript
+{  
+   "Result":true,
+   "Data":[  
+      {  
+         "DT_RowId":"616e370e-ff7b-41a2-8984-f78031ddea69",
+         "Number":"66:41:10204:3",
+         "Comment":"Обухово, клиент Иванов",
+         "Info":"Не удалось получить данные по запросу",
+         "Type":"6aa0e204-4d11-4e97-8348-1c2d9bce3655",
+         "ObjectType":"00000000-0000-0000-0000-000000000000"
+      },
+      {  
+         "DT_RowId":"237526e7-aee8-4049-87ec-abe951c4feb0",
+         "Number":"66:41:10204:4",
+         "Comment":"Обухово, клиент Иванов",
+         "Info":"Не удалось получить данные по запросу",
+         "Type":"6aa0e204-4d11-4e97-8348-1c2d9bce3655",
+         "ObjectType":"00000000-0000-0000-0000-000000000000"
+      },
+      {  
+         "DT_RowId":"14d7e44c-bcae-42b4-8471-6d38de704f91",
+         "Number":"66:41:10204:5",
+         "Comment":"Обухово, клиент Иванов",
+         "Info":"Не удалось получить данные по запросу",
+         "Type":"6aa0e204-4d11-4e97-8348-1c2d9bce3655",
+         "ObjectType":"00000000-0000-0000-0000-000000000000"
+      }
+   ],
+   "Date":"2015-12-04T15:09:35.4639656+03:00"
+}
+```
+
 #####Создать новый запрос в РР
 ```csharp
 var kadNubmer = "66:41:10204:003";
