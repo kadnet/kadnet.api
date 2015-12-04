@@ -23,6 +23,38 @@ var requestsTypesResult = api.GetRequestsTypes();
 ```csharp
 var objectTypesResult = api.GetObjectsTypes();
 ```
+#####Получить список типов тарифных планов
+```csharp
+var requestsTariffsResult = api.GetRequestsTariffs();
+var requestsTariffs = requestsTariffsResult.Data;
+```
+#####Проверить кадастровый номер
+```csharp
+var kadNubmers = "66:41:10204:003-005;";
+var comment = "Обухово, клиент Иванов";
+var requestsTypeId = Guid.Parse("6aa0e204-4d11-4e97-8348-1c2d9bce3655");//КПТ
+var objectTypeId = Guid.Empty;
+var checkRequestsResult = api.CheckRequests(kadNubmers, comment, requestsTypeId, objectTypeId);
+var checkRequests = checkRequestsResult.Data;
+
+JArray json = JArray.Parse(checkRequests);
+```
+#####Создать новый запрос в РР
+```csharp
+var kadNubmer = "66:41:10204:003";
+var selfSignedRequest = false;
+var tariffCode = "KptAllInlusive";
+var createRequestResult = api.CreateRequest(selfSignedRequest, tariffCode, kadNubmer, comment, requestsTypeId, objectTypeId);
+var createRequest = createRequestResult.Data;
+```
+#####Получить список запросов для подписания ЭЦП пользователя
+```csharp
+
+```
+#####Сохранить подпись запроса
+```csharp
+
+```
 #####Получить список запросов
 ```csharp
 var limitRequests = 100;
@@ -34,10 +66,6 @@ var requestsResult = api.GetRequests(limitRequests, skipRequests);
 var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
 var requestResult = api.GetRequest(reqId);
 var request = requestResult.Data;
-```
-#####Получить контент запрос для подписания ЭЦП пользователя
-```csharp
-
 ```
 #####Получить историю запроса по идентификатору
 ```csharp
