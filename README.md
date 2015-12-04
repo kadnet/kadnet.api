@@ -13,7 +13,13 @@ var authResult = api.Auth(login, password, software);
 if (authResult.Result)
   token = authResult.Data;
 ```
-
+*Результат выполнения запроса*
+```javascript
+{
+  "Result":true,
+  "Data":"dipjIB2lcWNwCgHGdjTAugeB8HHH5IFmYzXkUayhdjdZCXNXkBMUSGCqjFavWy+tHqh1HnXy/eoLtbn7XHNRjtMnHDcvo2hp/y6XZcsS+y11D4STA3qU3KAq1uUxD/dMmS2Be1o+yF/WEh9oE7qWUXWJ6joI2Wf8ZtIzp/PlydYRXBA/B+oia"
+}
+```
 ###Запросы в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
 #####Получить список типов запросов
 ```csharp
