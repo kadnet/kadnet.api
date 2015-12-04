@@ -28,7 +28,7 @@ var objectTypesResult = api.GetObjectsTypes();
 var requestsTariffsResult = api.GetRequestsTariffs();
 var requestsTariffs = requestsTariffsResult.Data;
 ```
-**Результат выполнения запроса**
+*Результат выполнения запроса*
 ```javascript
 {
   "Result":true,
