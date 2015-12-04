@@ -29,7 +29,19 @@ var requestsTariffsResult = api.GetRequestsTariffs();
 var requestsTariffs = requestsTariffsResult.Data;
 ```
 ```javascript
-{"Result":true,"Data":[{"TariffCode":"KptItSelf2015","UserDescription":"10Р + Самостоятельная оплата по коду платежа"},{"TariffCode":"KptAllInclusive","UserDescription":"190 рублей - Автоматическая оплата"}]}
+{
+"Result":true,
+"Data":[
+{
+"TariffCode":"KptItSelf2015",
+"UserDescription":"10Р + Самостоятельная оплата по коду платежа"
+},
+{
+"TariffCode":"KptAllInclusive",
+"UserDescription":"190 рублей - Автоматическая оплата"
+}
+]
+}
 ```
 
 
