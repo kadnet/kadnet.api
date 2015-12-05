@@ -5,6 +5,8 @@
  + [Авторизация пользователя](#Parag);
 2. Отправка запросов в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
  + [Получить список типов запросов](#GetRequestsTypes);
+ + [Получить список типов объектов](#GetObjectsTypes);
+ + 
 3. Отправка заявлений в Росреестр
 
 
@@ -77,7 +79,7 @@ var requestsTypesResult = api.GetRequestsTypes();
    "Date":"2015-12-04T14:57:42.8707956+03:00"
 }
 ```
-####Получить список типов объектов
+####<a name="GetObjectsTypes"></a>Получить список типов объектов
 ```csharp
 var objectTypesResult = api.GetObjectsTypes();
 ```
