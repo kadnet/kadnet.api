@@ -6,8 +6,15 @@
 2. Отправка запросов в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
  + [Получить список типов запросов](#GetRequestsTypes);
  + [Получить список типов объектов](#GetObjectsTypes);
- + 
+ + [Получить список типов тарифных планов](#GetRequestsTariffs);
+ + [Проверить кадастровый номер](#CheckRequests);
+ + [Создать новый запрос в РР](#CreateRequest);
+ + [Получить список запросов для подписания ЭЦП пользователя](#);
+ + [Проверить кадастровый номер](#);
+ + [Сохранить подпись запроса](#);
+ + [Получить список запросов](#GetRequests);
 3. Отправка заявлений в Росреестр
+ + [Получить список заявлений](#);
 
 
 ####<a name="Auth"></a>Авторизация пользователя
@@ -30,6 +37,7 @@ if (authResult.Result)
    "Result":true
 }
 ```
+
 ###Запросы в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
 ####<a name="GetRequestsTypes"></a>Получить список типов запросов
 ```csharp
@@ -120,7 +128,7 @@ var objectTypesResult = api.GetObjectsTypes();
    "Date":"2015-12-04T15:09:34.9482977+03:00"
 }
 ```
-####Получить список типов тарифных планов
+####<a name="GetRequestsTariffs"></a>Получить список типов тарифных планов
 ```csharp
 var requestsTariffsResult = api.GetRequestsTariffs();
 var requestsTariffs = requestsTariffsResult.Data;
@@ -155,7 +163,7 @@ var requestsTariffs = requestsTariffsResult.Data;
 }
 ```
 
-####Проверить кадастровый номер
+####<a name="CheckRequests"></a>Проверить кадастровый номер
 ```csharp
 var kadNubmers = "24:50:0000000:58340;24:50:0000000:58360-58365";
 var comment = "Иванов И.И., договор №3315";
@@ -232,7 +240,7 @@ JArray json = JArray.Parse(checkRequests);
 }
 ```
 
-#####Создать новый запрос в РР
+####<a name="CreateRequest"></a>Создать новый запрос в РР
 ```csharp
 var kadNubmer = "66:41:10204:003";
 var selfSignedRequest = false;
@@ -244,7 +252,7 @@ var createRequest = createRequestResult.Data;
 ```javascript
 
 ```
-#####Получить список запросов для подписания ЭЦП пользователя
+####<a name=""></a>Получить список запросов для подписания ЭЦП пользователя
 ```csharp
 
 ```
@@ -252,7 +260,7 @@ var createRequest = createRequestResult.Data;
 ```javascript
 
 ```
-#####Сохранить подпись запроса
+####<a name=""></a>Сохранить подпись запроса
 ```csharp
 
 ```
@@ -260,7 +268,7 @@ var createRequest = createRequestResult.Data;
 ```javascript
 
 ```
-#####Получить список запросов
+####<a name="GetRequests"></a>Получить список запросов
 ```csharp
 var limitRequests = 100;
 var skipRequests = 0;
@@ -310,7 +318,7 @@ var delete = deleteResult.Data;
 ```
 
 ###Заявления в Росреестр (Доп. документы, постановка на кад.учет ЗУ и ОКС, Акты обследования и прочие)
-#####Получить список заявлений
+####<a name=""></a>Получить список заявлений
 ```csharp
 
 ```
