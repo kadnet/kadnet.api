@@ -13,6 +13,9 @@
  + [Проверить кадастровый номер](#);
  + [Сохранить подпись запроса](#);
  + [Получить список запросов](#GetRequests);
+ + [Получить запрос по идентификатору](#GetRequest);
+ + [Получить историю запроса по идентификатору](#GetRequestHistory);
+ + [Получить результат запроса](#GetRequestContent);
 3. Отправка заявлений в Росреестр
  + [Получить список заявлений](#);
  + [Получить заявление по идентификатору](#);
@@ -42,6 +45,7 @@ if (authResult.Result)
    "Result":true
 }
 ```
+
 
 
 ###Запросы в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
@@ -285,7 +289,7 @@ var requestsResult = api.GetRequests(limitRequests, skipRequests);
 ```javascript
 
 ```
-#####Получить запрос по идентификатору
+####<a name="GetRequest"></a>Получить запрос по идентификатору
 ```csharp
 var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
 var requestResult = api.GetRequest(reqId);
@@ -295,7 +299,7 @@ var request = requestResult.Data;
 ```javascript
 
 ```
-#####Получить историю запроса по идентификатору
+####<a name="GetRequestHistory"></a>Получить историю запроса по идентификатору
 ```csharp
 var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
 var historyResult = api.GetRequestHistory(reqId);
@@ -305,8 +309,22 @@ var history = historyResult.Data;
 ```javascript
 
 ```
-#####Получить результат запроса
-```csharp
+####<a name="GetRequests"></a>Получить результат запроса
+```csharp     
+//получить результат запроса
+var requestBodyResult = api.GetRequestContent(reqId, ExportFormat.Raw);
+
+//получить результат запроса в CAD формате
+var requestBodyResultDxf = api.GetRequestContent(reqId, ExportFormat.Dxf);
+
+//получить результат запроса в Mid/Mif формате
+var requestBodyResultMidMif = api.GetRequestContent(reqId, ExportFormat.MidMif);
+
+//получить результат запроса в Pdf формате
+var requestBodyResultPdf = api.GetRequestContent(reqId, ExportFormat.Pdf);
+
+//Для КПТ можно получить список пунктов ОМС
+var requestBodyResultOmsPoints = api.GetRequestContent(reqId, ExportFormat.OmsPoints);
 
 ```
 *Результат выполнения запроса*
@@ -323,6 +341,7 @@ var delete = deleteResult.Data;
 ```javascript
 
 ```
+
 
 
 ###Заявления в Росреестр (Доп. документы, постановка на кад.учет ЗУ и ОКС, Акты обследования и прочие)
