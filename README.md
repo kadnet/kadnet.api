@@ -1,11 +1,15 @@
-# Kadnet Api Клиент
-С его помощью вы можете использовать сервис https://www.kadnet.ru для запроса сведений из Росреестра (далее РР) и отправки заявлений о постановке на кадастровый учет, доп. документов и прочее
+# Kadnet Api Клиент     
+
+С помощью данного API клиента вы можете использовать сервис https://www.kadnet.ru 
+для запроса сведений из Росреестра (далее РР) и отправки заявлений о постановке на кадастровый учет, 
+доп. документов и т.д.
 
 1. Общие методы
  + [Авторизация пользователя](#Parag);
 2. Отправка запросов в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
  + [Получить список типов запросов](#GetRequestsTypes);
- + [Получить список типов объектов](#GetObjectsTypes);
+ + [Получить список типов объектов ГКН](#GetObjectsTypesGkn);
+ + [Получить список типов объектов ЕГРП](#GetObjectsTypesEgrp);
  + [Получить список типов тарифных планов](#GetRequestsTariffs);
  + [Проверить кадастровый номер](#CheckRequests);
  + [Создать новый запрос в РР](#CreateRequest);
@@ -98,47 +102,41 @@ var requestsTypesResult = api.GetRequestsTypes();
    "Date":"2015-12-04T14:57:42.8707956+03:00"
 }
 ```
-####<a name="GetObjectsTypes"></a>Получить список типов объектов
+
+####<a name="GetObjectsTypesGkn"></a>Получить список типов объектов ГКН
 ```csharp
-var objectTypesResult = api.GetObjectsTypes();
+var objectTypesResult = api.GetObjectsTypesGkn();
 ```
 *Результат выполнения запроса*
 ```javascript
-{  
-   "Result":true,
-   "Data":[  
-      {  
-         "Id":"1288670c-4a52-4ec7-b11b-a7ccdcc6c72f",
-         "Title":"Земельный участок"
-      },
-      {  
-         "Id":"204a4a4d-fb42-4ce1-bb03-0b5308b77ba0",
-         "Title":"Здание"
-      },
-      {  
-         "Id":"5790e1ad-4f46-4645-a832-1a60bca3bd5c",
-         "Title":"Помещение"
-      },
-      {  
-         "Id":"14aa88fe-ffa6-47cb-b8ff-9850b6802ccc",
-         "Title":"Сооружение"
-      },
-      {  
-         "Id":"ccbc177e-edd4-49a9-ba2b-5264f91b3410",
-         "Title":"Объект незавершенного строительства"
-      },
-      {  
-         "Id":"bbb11896-0141-4c50-b5d8-d0bc38cd5edd",
-         "Title":"Предприятие как имущественный комплекс (ПИК)"
-      },
-      {  
-         "Id":"e1356d06-12e8-49f7-8e91-b47f8913e6e3",
-         "Title":"Участки недр"
-      }
-   ],
-   "Date":"2015-12-04T15:09:34.9482977+03:00"
+{
+	"Result": true,
+	"Data": [{
+		"Id": "1288670c-4a52-4ec7-b11b-a7ccdcc6c72f",
+		"Title": "Земельный участок"
+	}, {
+		"Id": "204a4a4d-fb42-4ce1-bb03-0b5308b77ba0",
+		"Title": "Здание"
+	}, {
+		"Id": "5790e1ad-4f46-4645-a832-1a60bca3bd5c",
+		"Title": "Помещение"
+	}, {
+		"Id": "14aa88fe-ffa6-47cb-b8ff-9850b6802ccc",
+		"Title": "Сооружение"
+	}, {
+		"Id": "ccbc177e-edd4-49a9-ba2b-5264f91b3410",
+		"Title": "Объект незавершенного строительства"
+	}, {
+		"Id": "bbb11896-0141-4c50-b5d8-d0bc38cd5edd",
+		"Title": "Предприятие как имущественный комплекс (ПИК)"
+	}, {
+		"Id": "e1356d06-12e8-49f7-8e91-b47f8913e6e3",
+		"Title": "Участки недр"
+	}],
+	"Date": "2016-02-04T09:50:12.0232985+03:00"
 }
 ```
+
 ####<a name="GetRequestsTariffs"></a>Получить список типов тарифных планов
 ```csharp
 var requestsTariffsResult = api.GetRequestsTariffs();
@@ -173,6 +171,7 @@ var requestsTariffs = requestsTariffsResult.Data;
    "Date":"2015-12-04T15:09:36.0421248+03:00"
 }
 ```
+
 
 ####<a name="CheckRequests"></a>Проверить кадастровый номер
 ```csharp
@@ -250,7 +249,7 @@ JArray json = JArray.Parse(checkRequests);
    "Date":"2015-12-04T16:36:54.3029506+03:00"
 }
 ```
-
+              
 ####<a name="CreateRequest"></a>Создать новый запрос в РР
 ```csharp
 var kadNubmer = "66:41:10204:003";
@@ -263,6 +262,7 @@ var createRequest = createRequestResult.Data;
 ```javascript
 
 ```
+
 ####<a name=""></a>Получить список запросов для подписания ЭЦП пользователя
 ```csharp
 
@@ -271,6 +271,7 @@ var createRequest = createRequestResult.Data;
 ```javascript
 
 ```
+
 ####<a name=""></a>Сохранить подпись запроса
 ```csharp
 
@@ -279,6 +280,7 @@ var createRequest = createRequestResult.Data;
 ```javascript
 
 ```
+
 ####<a name="GetRequests"></a>Получить список запросов
 ```csharp
 var limitRequests = 100;
@@ -289,6 +291,7 @@ var requestsResult = api.GetRequests(limitRequests, skipRequests);
 ```javascript
 
 ```
+
 ####<a name="GetRequest"></a>Получить запрос по идентификатору
 ```csharp
 var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
@@ -299,6 +302,7 @@ var request = requestResult.Data;
 ```javascript
 
 ```
+
 ####<a name="GetRequestHistory"></a>Получить историю запроса по идентификатору
 ```csharp
 var reqId = Guid.Parse("C1231EF4-DBD4-479C-A68A-033F47D9E237");
@@ -309,6 +313,7 @@ var history = historyResult.Data;
 ```javascript
 
 ```
+
 ####<a name="GetRequests"></a>Получить результат запроса
 ```csharp     
 //получить результат запроса
@@ -341,8 +346,6 @@ var delete = deleteResult.Data;
 ```javascript
 
 ```
-
-
 
 ###Заявления в Росреестр (Доп. документы, постановка на кад.учет ЗУ и ОКС, Акты обследования и прочие)
 
@@ -378,6 +381,7 @@ var delete = deleteResult.Data;
 ```javascript
 
 ```
+
 ####<a name=""></a>Получить результат заявления
 ```csharp
 
@@ -386,6 +390,7 @@ var delete = deleteResult.Data;
 ```javascript
 
 ```
+
 ####<a name=""></a>Удалить заявление
 ```csharp
 
