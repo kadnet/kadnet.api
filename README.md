@@ -148,11 +148,20 @@ var objectTypesResult = api.GetObjectsTypesEgrp();
 		"Id": "1288670c-4a52-4ec7-b11b-a7ccdcc6c72f",
 		"Title": "Земельный участок"
 	}, {
-		"Id": "204a4a4d-fb42-4ce1-bb03-0b5308b77ba0",
-		"Title": "Здание"
+		"Id": "7b29e86b-c5ec-41f3-aaf5-b8f511600cb3",
+		"Title": "Квартира"
 	}, {
-		"Id": "5790e1ad-4f46-4645-a832-1a60bca3bd5c",
-		"Title": "Помещение"
+		"Id": "91aa7b6c-bb8e-438a-a57b-9d452abebde9",
+		"Title": "Комната"
+	}, {
+		"Id": "54f52d6b-3f70-4e3d-8137-d7f7fc55c89e",
+		"Title": "Помещение не жилое"
+	}, {
+		"Id": "b3c8d68b-796c-4cf4-b06a-1b46ef5d0c1b",
+		"Title": "Здание жилое"
+	}, {
+		"Id": "f2ed2c39-eb4b-4190-956b-38462bc48709",
+		"Title": "Здание не жилое"
 	}, {
 		"Id": "14aa88fe-ffa6-47cb-b8ff-9850b6802ccc",
 		"Title": "Сооружение"
@@ -166,7 +175,7 @@ var objectTypesResult = api.GetObjectsTypesEgrp();
 		"Id": "e1356d06-12e8-49f7-8e91-b47f8913e6e3",
 		"Title": "Участки недр"
 	}],
-	"Date": "2016-02-04T09:50:12.0232985+03:00"
+	"Date": "2016-02-04T10:02:06.3759783+03:00"
 }
 ```
 
