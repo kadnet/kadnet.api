@@ -6,6 +6,7 @@
 
 1. Общие методы
  + [Авторизация пользователя](#Parag);
+
 2. Отправка запросов в Росреестр (КПТ, ЕГРП, КПЗУ, КВЗУ и прочие)
  + [Получить список типов запросов](#GetRequestsTypes);
  + [Получить список типов объектов ГКН](#GetObjectsTypesGkn);
@@ -13,13 +14,13 @@
  + [Получить список типов тарифных планов](#GetRequestsTariffs);
  + [Проверить кадастровый номер](#CheckRequests);
  + [Создать новый запрос в РР](#CreateRequest);
- + [Получить список запросов для подписания ЭЦП пользователя](#);
- + [Проверить кадастровый номер](#);
- + [Сохранить подпись запроса](#);
+ + [Получить список запросов для подписания ЭЦП пользователя](#GetRequestsToSign);
+ + [Сохранить подпись запроса](#SaveSign);
  + [Получить список запросов](#GetRequests);
  + [Получить запрос по идентификатору](#GetRequest);
  + [Получить историю запроса по идентификатору](#GetRequestHistory);
  + [Получить результат запроса](#GetRequestContent);
+
 3. Отправка заявлений в Росреестр
  + [Получить список заявлений](#);
  + [Получить заявление по идентификатору](#);
@@ -305,18 +306,25 @@ var createRequest = createRequestResult.Data;
 
 ```
 
-####<a name=""></a>Получить список запросов для подписания ЭЦП пользователя
+####<a name="GetRequestsToSign"></a>Получить список запросов для подписания ЭЦП пользователя
 ```csharp
-
+var requestsToSignResult = api.GetRequestsToSign();
+var requestsToSign = requestsToSignResult.Data;
 ```
 *Результат выполнения запроса*
 ```javascript
 
 ```
 
-####<a name=""></a>Сохранить подпись запроса
+####<a name="SaveSign"></a>Сохранить подпись запроса
 ```csharp
+var requestId = Guid.Empty;
+var signContent = "base64";
+var certContent = "base64certificate";
+var cpVersion = "CryptoPro version";
 
+var saveSignResult = api.SaveSign(requestId, signContent, certContent, cpVersion);
+var saveSign = saveSignResult.Data;
 ```
 *Результат выполнения запроса*
 ```javascript
